@@ -42,11 +42,13 @@ query: { number_of_employees: {$gte: 100, $lt: 1000} }
 
 ### 9. Order all the companies by their IPO price in a descending order.
 
-<!-- Your Code Goes Here -->
+query: { "ipo.valuation_amount": {$exists: true } }
+sort: { "ipo.valuation_amount": -1 }
 
 ### 10. Retrieve the 10 companies with most employees, order by the `number of employees`
 
-<!-- Your Code Goes Here -->
+sort: { number_of_employees: -1 }
+limit: 10
 
 ### 11. All the companies founded on the second semester of the year. Limit your search to 1000 companies.
 
